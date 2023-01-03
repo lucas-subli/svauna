@@ -2,6 +2,11 @@
   import { AsyncButton, Button } from '$lib/components/common';
 </script>
 
+<svelte:head>
+	<title>Svauna - The new stack ? </title>
+	<meta name="description" content="Svauna is a playground built by using Svelte and FaunaDB, just for the fun of it." />
+</svelte:head>
+
 <h1>Welcome to SvelteKit</h1>
 <Button>
   Click you
