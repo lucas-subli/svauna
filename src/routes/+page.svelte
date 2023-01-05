@@ -4,13 +4,6 @@
   import working from "$lib/assets/working.avif";
 
 </script>
-<svelte:head>
-	<title>Svauna - The new stack ?</title>
-	<meta
-		name="description"
-		content="Svauna is a playground built by using Svelte and FaunaDB, just for the fun of it."
-	/>
-</svelte:head>
 
 <div class="relative">
 	<div class="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100" />
@@ -39,14 +32,14 @@
 				<div class="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
 					<div class="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
 						<a
-							href="something"
+							href="server-load"
 							class="flex items-center justify-center rounded-md border border-transparent bg-emerald-50 px-4 py-3 text-base font-medium text-emerald-700 shadow-sm hover:bg-emerald-100 sm:px-8"
-							>Something</a
+							>Server Load</a
 						>
 						<a
-							href="another"
+							href="api-call"
 							class="flex items-center justify-center rounded-md border border-transparent bg-fuchsia-500 bg-opacity-60 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-70 sm:px-8"
-							>Another thing</a
+							>API call</a
 						>
 					</div>
 				</div>

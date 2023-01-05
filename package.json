@@ -39,5 +39,8 @@
 		"vite-imagetools": "^4.0.13",
 		"vitest": "^0.25.3"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"faunadb": "^4.7.1"
+	}
 }

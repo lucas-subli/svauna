@@ -12,10 +12,7 @@
   let image = {}
   let sources = []
 
-  console.log(src)
-
   $: if (src.length) {
-    console.log(src)
     const { list, lqip } = src.reduce(
       (a, c) => {
         if (c.base64) a.lqip = `url('${c.base64}') no-repeat center/cover`
@@ -27,7 +24,6 @@
     const groups = []
     for (const format of priority) {
       const group = list.filter((i) => i.format === format)
-      console.log(list)
       if (group.length) {
         group.sort((a, b) => a.width - b.width)
         const { src, width, height } = group[group.length - 1]
