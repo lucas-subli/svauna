@@ -1,6 +1,6 @@
 <script>
 	// Heroicon name: outline/key
-	export let iconColorClass = 'text-brand';
+	export let iconColorClass = 'text-primary';
 	export let heightClass = 'h-6';
 	export let widthClass = 'w-6';
 </script>

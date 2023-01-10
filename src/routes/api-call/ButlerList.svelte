@@ -20,7 +20,7 @@
 		{:else}
 			{#each butlers as butler}
 				<h1 class="text-2xl font-bold">{butler.name}</h1>
-				<p class="text-gray-600">{butler.email}</p>
+				<p class="text-gray">{butler.email}</p>
 			{/each}
 		{/if}
 	{:catch error}

@@ -22,11 +22,11 @@
 
 <div class="{containerClasses} inset-0 pointer-events-none fixed z-40 flex flex-col pt-3 pb-4">
 	{#each $notifications as notification (notification.id)}<div
-			class="pointer-events-auto mb-2 flex items-stretch rounded bg-gray-700 text-white shadow-md {notification.type}"
+			class="pointer-events-auto mb-2 flex items-stretch rounded bg-gray-dark text-white shadow-md {notification.type}"
 			animate:flip={{ duration: 300, easing: quintOut }}
 			transition:fly={{ duration: 300, y: flyAnimationOffset, easing: quintOut }}
 		>
-			{#if notification.type === 'info'}<div class="icon self-center pl-4 text-blue-400">
+			{#if notification.type === 'info'}<div class="icon self-center pl-4 text-info">
 					<svg
 						class="h-5 w-5"
 						fill="currentColor"
@@ -39,7 +39,7 @@
 						/></svg
 					>
 				</div>{/if}{#if notification.type === 'success'}<div
-					class="icon self-center pl-4 text-green-500"
+					class="icon self-center pl-4 text-success"
 				>
 					<svg
 						class="h-5 w-5"
@@ -53,7 +53,7 @@
 						/></svg
 					>
 				</div>{/if}{#if notification.type === 'warning'}<div
-					class="icon self-center pl-4 text-yellow-400"
+					class="icon self-center pl-4 text-warning"
 				>
 					<svg
 						class="h-5 w-5"
@@ -67,7 +67,7 @@
 						/></svg
 					>
 				</div>{/if}{#if notification.type === 'danger'}<div
-					class="icon self-center pl-4 text-red-500"
+					class="icon self-center pl-4 text-danger"
 				>
 					<svg
 						class="h-5 w-5"
@@ -91,7 +91,7 @@
 					>{/if}
 			</div>
 			{#if notification.dismissable}<button
-					class="hover_text-white active_bg-transparent focus_bg-transparent focus_outline-none border-none px-4 text-gray-400"
+					class="hover_text-white active_bg-transparent focus_bg-transparent focus_outline-none border-none px-4 text-warning"
 					on:click={() => notifications.dismiss(notification.id)}
 					><svg
 						class="h-4 w-4"

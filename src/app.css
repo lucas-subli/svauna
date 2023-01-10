@@ -1,18 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
-:root {
-	/* brand color variants */
-	--color-brand-lightest: 253, 244, 255; /* currently matches Tailwind 'Fucshia 50' #fdf4ff */
-	--color-brand-light: 216, 180, 254; /* currently matches Tailwind 'Fucshia 300', #d8b4fe */
-	--color-brand-default: 168, 85, 247; /* currently matches Tailwind 'Fucshia 500', #a855f7 */
-	--color-brand-dark: 126, 34, 206; /* currently matches Tailwind 'Fucshia 700', #7e22ce */
-
-	/* action color variants */
-	--color-action-default: 13, 148, 136; /* currently matches Tailwind 'teal 600', #0d9488 */
-	--color-action-hover: 20, 184, 166; /* currently adjusted from Tailwind 'teal 500', #14b8a6 */
-	--color-action-focus: 15, 118, 110; /* currently matches Tailwind 'teal 700', #0f766e */
-	--color-action-highlight: 240, 253, 250; /* currently adjusted from Tailwind 'teal 50', #f0fdfa */
-}

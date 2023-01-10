@@ -1,6 +1,6 @@
 <script>
 	// Heroicon name: outline/exclamation
-	export let iconColorClass = 'text-red-600';
+	export let iconColorClass = 'text-danger';
 	export let heightClass = 'h-6';
 	export let widthClass = 'w-6';
 </script>

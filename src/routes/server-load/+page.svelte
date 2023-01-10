@@ -15,7 +15,7 @@
 {#each data.res as client}
   <div class="m-8">
     <h1 class="text-2xl font-bold">{client.name}</h1>
-    <p class="text-gray-600">{client.email}</p>
+    <p class="text-gray">{client.email}</p>
   </div>
 {/each}
 

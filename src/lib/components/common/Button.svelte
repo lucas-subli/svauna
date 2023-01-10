@@ -1,23 +1,60 @@
 <script lang="ts">
 	import type { Colors } from '$lib/model/common/colors';
-	import { getColors } from '$lib/utils/ButtonColorBuilder';
 
 	export let color: Colors = 'primary';
 	export let disabled: boolean = false;
-
-	const colors = getColors(color);
 </script>
 
-<button
-	on:click
-	class={`${colors.bg} ${colors.text} ${colors.hover.bg} ${colors.disabled.bg} ${colors.disabled.text}`}
-	{disabled}
->
+<button on:click class={color} {disabled}>
 	<slot />
 </button>
 
 <style lang="postcss">
 	button {
-		@apply inline-flex items-center rounded border border-transparent px-2.5 py-1.5 text-xs font-medium;
+		@apply inline-flex items-center rounded-md border border-transparent px-2.5 py-1.5 text-xs font-bold backdrop-blur-sm backdrop-filter shadow-md;
+	}
+
+	button.inline {
+		@apply rounded py-2 px-3 text-sm;
+	}
+
+	button.standard {
+		@apply rounded-md py-3 px-5 text-sm;
+	}
+
+	button.featured {
+		@apply rounded-md py-3 px-6 text-base;
+	}
+
+	button.primary {
+		@apply bg-primary bg-opacity-20 text-primary-dark hover:bg-opacity-50;
+	}
+
+	button.secondary {
+		@apply bg-secondary bg-opacity-20 text-secondary-dark hover:bg-opacity-50;
+	}
+
+	button.success {
+		@apply bg-success bg-opacity-20 text-success-dark hover:bg-opacity-50;
+	}
+
+	button.danger {
+		@apply bg-danger bg-opacity-20 text-danger-dark hover:bg-opacity-50;
+	}
+
+	button.warning {
+		@apply bg-warning bg-opacity-20 text-warning-dark hover:bg-opacity-50;
+	}
+
+	button.info {
+		@apply bg-info bg-opacity-20 text-info-dark hover:bg-opacity-50;
+	}
+
+	button.white {
+		@apply bg-white bg-opacity-20 text-gray-dark hover:bg-opacity-50;
+	}
+
+	button.transparent {
+		@apply bg-transparent text-gray-dark hover:bg-gray-lightest hover:bg-opacity-20;
 	}
 </style>

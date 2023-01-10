@@ -30,7 +30,7 @@
 	export let danger = false;
 	export let errors: string[] | null = null;
 	const dispatch = createEventDispatcher();
-	const iconBgColorClass = danger ? 'bg-red-50' : 'bg-brand-lightest';
+	const iconBgColorClass = danger ? 'bg-danger-lightest' : 'bg-primary-lightest';
 	const modalName = `modal-title-${Math.floor(Math.random() * 10000000)}`;
 	const openModal = async () => {
 		show = true;
@@ -95,7 +95,7 @@
 				class="{pointerEventsClass} flex min-h-screen items-end justify-center px-4 pt-4 pb-20 text-center sm:block sm:p-0"
 			>
 				<div
-					class="shade {pointerEventsClass} fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+					class="shade {pointerEventsClass} fixed inset-0 bg-gray bg-opacity-75 transition-opacity"
 					in:scale={{ duration: 300, start: 1, easing: quintOut }}
 					out:scale={{ duration: 300, delay: 100, start: 1, easing: quintOut }}
 					aria-hidden="true"
@@ -118,8 +118,8 @@
 								>
 							</div>{/if}
 						<div class="{modalIcon ? 'mt-3 sm:mt-5' : 'mt-1 sm:mt-3'} text-center">
-							<h3 class="text-lg font-medium text-gray-900" id={modalName}>{modalHeading}</h3>
-							{#if $$slots.content}<div class="mt-4 text-gray-700">
+							<h3 class="text-lg font-medium text-gray-dark" id={modalName}>{modalHeading}</h3>
+							{#if $$slots.content}<div class="mt-4 text-gray-dark">
 									<slot name="content" />
 								</div>
 							{/if}
@@ -158,7 +158,7 @@
 							{/if}
 						</div>
 						{#if modalAlternativeAction}<p
-								class="mt-4 mb-1 cursor-pointer text-center font-medium text-action hover:text-action-hover sm:mt-6 sm:mb-2"
+								class="mt-4 mb-1 cursor-pointer text-center font-medium text-secondary hover:text-secondary-dark sm:mt-6 sm:mb-2"
 								on:click={() => {
 									if (modalAlternativeAction) modalAlternativeAction();
 								}}

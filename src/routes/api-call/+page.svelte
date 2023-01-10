@@ -38,12 +38,12 @@
 
 <div class="prose mb-1">
 	<h1 class="!mb-2 !text-3xl">Svelte modal component</h1>
-	<p class="text-sm leading-6 text-gray-500">
+	<p class="text-sm leading-6 text-gray">
 		By default component displays an inline affordance, as button or link. Can be configured to
 		optionally display multiple or 0 actions, text and/or form content, and custom headings and
 		icons. Modal will close via click on background or 'escape' key.
 	</p>
-	<p class="text-sm leading-6 text-gray-500">
+	<p class="text-sm leading-6 text-gray">
 		See <a
 			href="https://github.com/ClaytonFarr/sveltekit-netlify-stripe-fauna-example/blob/master/src/lib/components/Modal.svelte"
 			>component code</a

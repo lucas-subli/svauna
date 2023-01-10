@@ -44,46 +44,46 @@
 		@apply focus:outline-none focus:ring-2 focus:ring-offset-2;
 	}
 	button.hoverable:not(.danger) {
-		@apply focus:bg-action-focus focus:ring-action-focus;
+		@apply focus:bg-primary-dark focus:ring-primary-dark;
 	}
 	button.hoverable.danger {
-		@apply focus:bg-red-700 focus:ring-red-700;
+		@apply focus:bg-danger-dark focus:ring-danger-dark;
 	}
 	button.primary:not(.danger) {
-		@apply text-white shadow-sm bg-action border-transparent;
+		@apply text-white shadow-sm bg-primary border-transparent;
 	}
 	button.primary.hoverable:not(.danger) {
-		@apply hover:bg-action-hover;
+		@apply hover:bg-primary-dark;
 	}
 	button.primary.danger {
-		@apply text-white shadow-sm bg-red-600 border-transparent;
+		@apply text-white shadow-sm bg-danger border-transparent;
 	}
 	button.primary.danger.hoverable {
-		@apply hover:bg-red-700;
+		@apply hover:bg-danger-dark;
 	}
 	button.secondary:not(.danger) {
-		@apply text-action border-action;
+		@apply text-primary border-primary;
 	}
 	button.secondary.hoverable:not(.danger) {
-		@apply hover:text-white hover:bg-action-hover hover:border-action-hover focus:border-action-focus focus:text-white;
+		@apply hover:text-white hover:bg-primary-dark hover:border-primary-dark focus:border-primary-dark focus:text-white;
 	}
 	button.secondary.danger {
-		@apply text-red-600 border-red-600;
+		@apply text-danger border-danger;
 	}
 	button.secondary.danger.hoverable {
-		@apply hover:text-white hover:bg-red-700 hover:border-red-700 focus:border-red-700 focus:text-white;
+		@apply hover:text-white hover:bg-danger-dark hover:border-danger-dark focus:border-danger-dark focus:text-white;
 	}
 	button.tertiary:not(.danger) {
-		@apply text-action border-transparent;
+		@apply text-primary border-transparent;
 	}
 	button.tertiary.hoverable:not(.danger) {
-		@apply hover:text-white hover:bg-action-hover focus:text-white;
+		@apply hover:text-white hover:bg-primary-dark focus:text-white;
 	}
 	button.tertiary.danger {
-		@apply text-red-600 border-transparent;
+		@apply text-danger border-transparent;
 	}
 	button.tertiary.danger.hoverable {
-		@apply hover:text-white hover:bg-red-700 focus:text-white;
+		@apply hover:text-white hover:bg-danger-dark focus:text-white;
 	}
 	button.fullwidth:not(.inline) {
 		@apply w-full;
