@@ -1,16 +1,20 @@
 <script lang="ts">
 	import type { Colors } from '$lib/model/common/colors';
 
-	export let color: Colors = 'transparent';
+	export let color: Colors = 'primary';
 </script>
 
 <div class="flex justify-center {$$props.class}">
   <div class="card {color}">
-    <h5 class="text-gray-dark text-xl leading-tight font-medium mb-2">Card title</h5>
-    <p class="text-gray text-base mb-4">
-      Some quick example text to build on the card title and make up the bulk of the card's
-      content.
-    </p>
+    {#if $$slots.header}
+      <div class="text-xl leading-tight font-bold mb-2">
+        <slot name="header"></slot>
+      </div>
+    {/if}
+    <div class="text-base">
+      <slot>
+      </slot>
+    </div>
   </div>
 </div>
 
@@ -21,27 +25,27 @@
   }
 
   .card.primary {
-		@apply bg-primary bg-opacity-40 text-primary-dark;
+		@apply bg-primary-lightest bg-opacity-40 text-primary-dark;
 	}
 
 	.card.secondary {
-		@apply bg-secondary bg-opacity-40 text-secondary-dark;
+		@apply bg-secondary-lightest bg-opacity-40 text-secondary-dark;
 	}
 
 	.card.success {
-		@apply bg-success bg-opacity-40 text-success-dark;
+		@apply bg-success-lightest bg-opacity-40 text-success-dark;
 	}
 
 	.card.danger {
-		@apply bg-danger bg-opacity-40 text-danger-dark;
+		@apply bg-danger-lightest bg-opacity-40 text-danger-dark;
 	}
 
 	.card.warning {
-		@apply bg-warning bg-opacity-40 text-warning-dark;
+		@apply bg-warning-lightest bg-opacity-40 text-warning-dark;
 	}
 
 	.card.info {
-		@apply bg-info bg-opacity-40 text-info-dark;
+		@apply bg-info-lightest bg-opacity-40 text-info-dark;
 	}
 
 	.card.white {

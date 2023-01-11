@@ -5,13 +5,13 @@
 	export let disabled: boolean = false;
 </script>
 
-<button on:click class={color} {disabled}>
+<button on:click class={color} {disabled} {...$$restProps}>
 	<slot />
 </button>
 
 <style lang="postcss">
 	button {
-		@apply inline-flex items-center rounded-md border border-transparent px-2.5 py-1.5 text-xs font-bold backdrop-blur-sm backdrop-filter shadow-md;
+		@apply inline-flex place-content-center items-center rounded-md border border-transparent px-2.5 py-1.5 text-xs font-bold shadow-md backdrop-blur-sm backdrop-filter;
 	}
 
 	button.inline {

@@ -5,7 +5,7 @@
 
 <div class="cool-bg">
 	<AppImage
-		class="h-full w-full object-cover"
+		class="object-cover"
 		src={bg1}
 		loading="eager"
 		alt="People working on laptops"

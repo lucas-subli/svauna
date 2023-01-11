@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Colors } from '$lib/model/common/colors';
-	import { getColors } from '$lib/utils/ButtonColorBuilder';
+	import Button from './Button.svelte';
 	import Spinner from './Spinner.svelte';
 
 	export let func: (...args: any[]) => Promise<void>;
@@ -13,25 +13,13 @@
 		await func();
 		isLoading = false;
 	};
-
-	const colors = getColors(color);
 </script>
 
-<button
-	on:click={handleClick}
-	disabled={isLoading}
-	class={`${colors.bg} ${colors.text} ${colors.hover.bg} ${colors.disabled.bg} ${colors.disabled.text}`}
->
+<Button on:click={handleClick} disabled={isLoading} {color} {...$$restProps}>
 	<div class:invisible={isLoading} class="inline-flex items-center">
 		<slot />
 	</div>
 	{#if isLoading}
-		<Spinner class={`absolute ${colors.loader}`} />
+		<Spinner class={`absolute`} />
 	{/if}
-</button>
-
-<style lang="postcss">
-	button {
-		@apply inline-flex place-content-center items-center rounded border border-transparent px-2.5 py-1.5 text-xs font-medium;
-	}
-</style>
+</Button>
