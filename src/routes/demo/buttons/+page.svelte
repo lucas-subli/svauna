@@ -3,83 +3,149 @@
 
   const uselessFunc = async () => {
 		await new Promise((f) => setTimeout(f, 2000));
-		console.log('someFunc executed');
+		console.log('useless func executed');
 	};
 </script>
 
-<Card class="mb-4">
+<Card class="my-4">
   <div slot="header"> Color buttons </div>
-  <div class="flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2">
-    <Button color="primary" on:click={() => {}}>
+  <div class="display">
+    <Button color="primary" class="m-2" on:click={() => {}}>
       Button
     </Button>
 
-    <Button color="secondary" on:click={() => {}}>
+    <Button color="secondary" class="m-2" on:click={() => {}}>
       Button
     </Button>
 
-    <Button color="success" on:click={() => {}}>
+    <Button color="success" class="m-2" on:click={() => {}}>
       Button
     </Button>
 
-    <Button color="danger" on:click={() => {}}>
+    <Button color="danger" class="m-2" on:click={() => {}}>
       Button
     </Button>
 
-    <Button color="warning" on:click={() => {}}>
+    <Button color="warning" class="m-2" on:click={() => {}}>
       Button
     </Button>
 
-    <Button color="info" on:click={() => {}}>
+    <Button color="info" class="m-2" on:click={() => {}}>
       Button
     </Button>
 
-    <Button color="white" on:click={() => {}}>
+    <Button color="white" class="m-2" on:click={() => {}}>
       Button
     </Button>
 
-    <Button color="transparent" on:click={() => {}}>
+    <Button color="transparent" class="m-2" on:click={() => {}}>
       Button
     </Button>
   </div>
 </Card>
 
 
-<Card color="info">
+<Card color="info" class="mb-4">
   <div slot="header"> With loaders </div>
-  <div class="flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2">
-    <AsyncButton func={uselessFunc} color="primary" on:click={() => {}}>
+  <div class="display">
+    <AsyncButton func={uselessFunc} color="primary" class="m-2">
       Button
     </AsyncButton>
 
-    <AsyncButton func={uselessFunc} color="secondary" on:click={() => {}}>
+    <AsyncButton func={uselessFunc} color="secondary" class="m-2">
       Button
     </AsyncButton>
 
-    <AsyncButton func={uselessFunc} color="success" on:click={() => {}}>
+    <AsyncButton func={uselessFunc} color="success" class="m-2">
       Button
     </AsyncButton>
 
-    <AsyncButton func={uselessFunc} color="danger" on:click={() => {}}>
+    <AsyncButton func={uselessFunc} color="danger" class="m-2">
       Button
     </AsyncButton>
 
-    <AsyncButton func={uselessFunc} color="warning" on:click={() => {}}>
+    <AsyncButton func={uselessFunc} color="warning" class="m-2">
       Button
     </AsyncButton>
 
-    <AsyncButton func={uselessFunc} color="info" on:click={() => {}}>
+    <AsyncButton func={uselessFunc} color="info" class="m-2">
       Button
     </AsyncButton>
 
-    <AsyncButton func={uselessFunc} color="white" on:click={() => {}}>
+    <AsyncButton func={uselessFunc} color="white" class="m-2">
       Button
     </AsyncButton>
 
-    <AsyncButton func={uselessFunc} color="transparent" on:click={() => {}}>
+    <AsyncButton func={uselessFunc} color="transparent" class="m-2">
       Button
     </AsyncButton>
   </div>
 </Card>
 
+<Card color="info" class="mb-4">
+  <div slot="header"> Disabled </div>
+  <div class="display">
+    <Button color="primary" class="m-2" disabled on:click={() => {}}>
+      Button
+    </Button>
 
+    <Button color="secondary" class="m-2" disabled on:click={() => {}}>
+      Button
+    </Button>
+  </div>
+</Card>
+
+<Card color="info" class="mb-4">
+  <div slot="header"> Sizes </div>
+  <div class="flex flex-col">
+    <div>
+      I am a standard button
+      <Button size="standard" class="m-2" on:click={() => {}}>
+        Standard
+      </Button>
+    </div>
+
+    <div>
+      I am a fat button
+      <Button color="secondary" size="fat" class="m-2" on:click={() => {}}>
+        Fat
+      </Button>
+    </div>
+
+    <div>
+      I am a Featured button
+      <Button color="info" size="featured" class="m-2" on:click={() => {}}>
+        Featured
+      </Button>
+    </div>
+
+    <div>
+      I am a inline button
+      <Button color="danger" size="inline" class="m-2" on:click={() => {}}>
+        inline
+      </Button>
+    </div>
+
+  </div>
+</Card>
+
+<Card color="info" class="mb-4">
+  <div slot="header"> Full Width </div>
+  <div class="display">
+    <Button color="primary" class="m-2" fullwidth>
+      Button
+    </Button>
+
+    <Button color="secondary" class="m-2" fullwidth>
+      Button
+    </Button>
+
+  </div>
+</Card>
+
+
+<style lang="postcss">
+  .display {
+    @apply flex flex-wrap flex-col md:flex-row place-content-center;
+  }
+</style>

@@ -16,9 +16,9 @@
 </script>
 
 <Button on:click={handleClick} disabled={isLoading} {color} {...$$restProps}>
-	<div class:invisible={isLoading} class="inline-flex items-center">
+	<span class:invisible={isLoading}>
 		<slot />
-	</div>
+  </span>
 	{#if isLoading}
 		<Spinner class={`absolute`} />
 	{/if}

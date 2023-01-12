@@ -3,13 +3,13 @@
 </script>
 
 <div class="h-full w-full space-y-4">
-  <Card>
+  <Card class="pt-8">
     <div slot="header">I am a Header</div>
     <div>I am a body of contents</div>
   </Card>
 
-  <Card color="primary">
-    <div slot="header">I am another Header</div>
+  <Card color="primary" fullwidth={false}>
+    <div slot="header">I don't have full width</div>
     <div>I am a Body of Effulgent Beryl</div>
   </Card>
 
@@ -63,7 +63,7 @@
     </div>
   </Card>
 
-  <Card color="white" class="pb-8">
+  <Card color="white">
     <div>
       Every challenge along the way
       With courage I will face
@@ -74,6 +74,12 @@
       There's no better team, yeah
       Arm in arm we'll win the fight
       It's always been our dream
+    </div>
+  </Card>
+
+  <Card color="transparent" class="pb-8">
+    <div>
+      POKEMON
     </div>
   </Card>
 

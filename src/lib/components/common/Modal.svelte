@@ -7,7 +7,6 @@
 	import { quintOut } from 'svelte/easing';
 	import { scale } from 'svelte/transition';
 	import Button from './Button.svelte';
-	import Button2 from './Button2.svelte';
 	export let show = false;
 	let modal: HTMLElement | null = null; // modal DOM reference
 	$: pointerEventsClass = show ? 'pointer-events-auto' : 'pointer-events-none';
@@ -145,15 +144,11 @@
 							{#if !modalHasInput}
 								<div class="mt-6 sm:mt-8 sm:grid sm:grid-flow-row-dense sm:grid-cols-2 sm:gap-3">
 									{#if modalConfirmAction}
-										<Button2 label="Cancel" level="secondary" on:click={closeModal} />
+										<Button color="secondary" on:click={closeModal}>cancel</Button>
 									{/if}
-									<Button2
-										label={modalActionLabel}
-										type="submit"
-										{danger}
-										on:click={actionHandler}
-										disabled={!formValid}
-									/>
+									<Button type="submit" on:click={actionHandler} disabled={!formValid}>
+										{modalActionLabel}
+									</Button>
 								</div>
 							{/if}
 						</div>
