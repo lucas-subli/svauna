@@ -1,7 +1,6 @@
 <script lang="ts">
 	import cat from '$lib/assets/cat01.jpg';
 	import { AppImage, Button, Modal, Notification } from '$lib/components/common';
-  import Button2 from '$lib/components/common/Button2.svelte';
 	import type { Butler } from '$lib/model/Butler';
 	import { notifications } from '$lib/stores/notifications';
 	import { onMount } from 'svelte';
@@ -26,12 +25,11 @@
 	<a href="/">
 		<Button color="warning">Back</Button>
 	</a>
-  <Button color="secondary">Modal</Button>
+	<Button color="secondary">Modal</Button>
 	<!-- <Modal modalHeading="I'm a Modal" affordanceButtonLabel="Modal">
     <p slot="content">‘Are their heads off?’ shouted the Queen.</p>
   </Modal> -->
 	<Button color="success" on:click={defaultNotification}>Notification</Button>
-  <Button2>me</Button2>
 </div>
 
 <ButlerList list={res} />
