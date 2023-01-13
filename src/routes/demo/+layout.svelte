@@ -1,16 +1,4 @@
-<script>
-	import bg1 from '$lib/assets/bg02.jpeg';
-	import { AppImage } from '$lib/components/common';
-</script>
-
-<div class="cool-bg">
-	<AppImage
-		class="object-cover"
-		src={bg1}
-		loading="eager"
-		alt="People working on laptops"
-	/>
-</div>
+<div class="cool-bg" />
 
 <div class="main">
 	<slot />
@@ -27,7 +15,7 @@
 		font-family: 'Poppins', sans-serif;
 		min-height: 100vh;
 		display: flex;
-    flex-direction: column;
+		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 	}
@@ -36,11 +24,33 @@
 		height: 100vh;
 		width: 100vw;
 		background: linear-gradient(to right top, #65efc9, #6cdbeb);
+		background-image: url('$lib/assets/bg02_1_1_w_400.jpg');
+		background-size: cover;
+		background-position: center center;
+		background-attachment: fixed;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		position: fixed;
 		z-index: -50;
+	}
+
+	@media only screen and (min-width: 400px) {
+		.cool-bg {
+			background-image: url('$lib/assets/bg02_4_3_w_538.jpg');
+		}
+	}
+
+	@media only screen and (min-width: 700px) {
+		.cool-bg {
+			background-image: url('$lib/assets/bg02_16_9_w_596.jpg');
+		}
+	}
+
+	@media only screen and (min-width: 1000px) {
+		.cool-bg {
+			background-image: url('$lib/assets/bg02_w_1246.jpg');
+		}
 	}
 
 	.circle1,
