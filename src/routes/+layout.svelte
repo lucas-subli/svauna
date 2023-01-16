@@ -1,6 +1,7 @@
 <script>
 	import '../app.css';
   import { navigating } from '$app/stores';
+  import { Notification } from '$lib/components/common';
   import PreloadingIndicator from '$lib/components/common/PreloadingIndicator.svelte';
 </script>
 
@@ -17,3 +18,5 @@
 {/if}
 
 <slot />
+
+<Notification />

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import cat from '$lib/assets/cat01.jpg';
-	import { AppImage, Button, Modal, Notification } from '$lib/components/common';
+	import { AppImage, Button, Modal } from '$lib/components/common';
 	import type { Butler } from '$lib/model/Butler';
-	import { notifications } from '$lib/stores/notifications';
+	import { notifications } from '$lib/stores/notification';
 	import { onMount } from 'svelte';
 	import ButlerList from './ButlerList.svelte';
 
@@ -57,5 +57,3 @@
 </div>
 
 <AppImage src={cat} alt="A cat" loading="eager" />
-
-<Notification />

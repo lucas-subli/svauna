@@ -23,12 +23,15 @@ const createNotificationStore = () => {
 		secondsDisplayed = 5
 	}: NotificationBase & { type?: NotificationType }) => {
 		const _id = id();
+    const eternal = !secondsDisplayed || secondsDisplayed <= 0;
+    if (eternal) dismissable = true;
+
 		_notifications.update((state) => {
 			return [...state, { id: _id, type, message, detail, dismissable, secondsDisplayed }];
 		});
 
 		// eternal notification
-		if (!secondsDisplayed) return;
+		if (eternal) return;
 
 		const timeoutId = setTimeout(() => {
 			dismiss(_id);
