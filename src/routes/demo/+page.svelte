@@ -15,6 +15,10 @@
   Buttons
 </Button>
 
+<Button on:click={() => goto('demo/forms')}>
+  Forms
+</Button>
+
 <Button on:click={() => goto('demo/cards')}>
   Cards
 </Button>
