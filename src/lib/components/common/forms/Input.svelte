@@ -79,8 +79,8 @@
 	// -------------------------------------------------------------------------------------------
 	// - expects an object with 'errors' and/or 'warnings' arrays of rules (as objects)
 	// - first property 'pattern' is regex to evaluate input's value against
-	// - second property 'showMessage' is a boolean that determines if message is displayed when pattern matches or misses
-	// - third property 'message' is error message displayed when pattern & showMessage align
+	// - second property 'messageIfMatch' is a boolean that determines if message is displayed when pattern matches or misses
+	// - third property 'message' is error message displayed when pattern & messageIfMatch align
 	// - if multiple errors exists they will be displayed one at a time, in the order added to the arrays
 	// - if errors and warnings are both present, errors will be shown first
 	// - if a standard 'pattern' is also included (above) & if a value is present, it will be tested before customValidation rules
@@ -90,24 +90,24 @@
 	// 	errors: [
 	// 		{
 	// 			pattern: 'password',
-	// 			showMessage: true,
+	// 			messageIfMatch: true,
 	// 			message: "Please choose a password that doesn't include the word 'password'.",
 	// 		},
 	// 		{
 	// 			pattern: '[*-/]',
-	// 			showMessage: true,
+	// 			messageIfMatch: true,
 	// 			message: "You've entered a special character we're not able to use.",
 	// 		},
 	// 	],
 	// 	warnings: [
 	// 		{
 	// 			pattern: '[0-9]',
-	// 			showMessage: false,
+	// 			messageIfMatch: false,
 	// 			message: 'Consider adding numbers for a stronger password.',
 	// 		},
 	// 		{
 	// 			pattern: '[\\s]',
-	// 			showMessage: false,
+	// 			messageIfMatch: false,
 	// 			message: 'Consider adding spaces for a stronger password.',
 	// 		},
 	// 	],
@@ -127,20 +127,20 @@
 	}
 	function checkCustomValidation() {
 		customValidation?.errors?.forEach((rule) => {
-			const { pattern, showMessage, message } = rule;
+			const { pattern, messageIfMatch, message } = rule;
 			const regex = new RegExp(pattern, 'g');
 			value === null ? (value = '') : (value = value);
 			typeof value === 'number' ? (value = value.toString()) : (value = value);
 			const validity = regex.test(value); // 'value' is Svelte variable for current value
-			if ((validity && showMessage) || (!validity && !showMessage)) errors.push(message);
+			if ((validity && messageIfMatch) || (!validity && !messageIfMatch)) errors.push(message);
 		});
 		customValidation?.warnings?.forEach((rule) => {
-			const { pattern, showMessage, message } = rule;
+			const { pattern, messageIfMatch, message } = rule;
 			const regex = new RegExp(pattern, 'g');
 			value === null ? (value = '') : (value = value);
 			typeof value === 'number' ? (value = value.toString()) : (value = value);
 			const validity = regex.test(value);
-			if ((validity && showMessage) || (!validity && !showMessage)) warnings.push(message);
+			if ((validity && messageIfMatch) || (!validity && !messageIfMatch)) warnings.push(message);
 		});
 	}
 	onMount(() => {

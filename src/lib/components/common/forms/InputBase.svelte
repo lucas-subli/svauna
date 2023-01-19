@@ -50,8 +50,8 @@
 	// -------------------------------------------------------------------------------------------
 	// - expects an object with 'errors' and/or 'warnings' arrays of rules (as objects)
 	// - first property 'pattern' is regex to evaluate input's value against
-	// - second property 'showMessage' is a boolean that determines if message is displayed when pattern matches or misses
-	// - third property 'message' is error message displayed when pattern & showMessage align
+	// - second property 'messageIfMatch' is a boolean that determines if message is displayed when pattern matches or misses
+	// - third property 'message' is error message displayed when pattern & messageIfMatch align
 	// - if multiple errors exists they will be displayed one at a time, in the order added to the arrays
 	// - if errors and warnings are both present, errors will be shown first
 	// - if a standard 'pattern' is also included (above) & if a value is present, it will be tested before customValidation rules
@@ -92,20 +92,20 @@
 
 	function checkCustomValidation() {
 		customValidation?.errors?.forEach((rule) => {
-			const { pattern, showMessage, message } = rule;
+			const { pattern, messageIfMatch, message } = rule;
 			const regex = new RegExp(pattern, 'g');
 			value === null ? (value = '') : (value = value);
 			typeof value === 'number' ? (value = value.toString()) : (value = value);
 			const validity = regex.test(value); // 'value' is Svelte variable for current value
-			if ((validity && showMessage) || (!validity && !showMessage)) errors.push(message);
+			if ((validity && messageIfMatch) || (!validity && !messageIfMatch)) errors.push(message);
 		});
 		customValidation?.warnings?.forEach((rule) => {
-			const { pattern, showMessage, message } = rule;
+			const { pattern, messageIfMatch, message } = rule;
 			const regex = new RegExp(pattern, 'g');
 			value === null ? (value = '') : (value = value);
 			typeof value === 'number' ? (value = value.toString()) : (value = value);
 			const validity = regex.test(value);
-			if ((validity && showMessage) || (!validity && !showMessage)) warnings.push(message);
+			if ((validity && messageIfMatch) || (!validity && !messageIfMatch)) warnings.push(message);
 		});
 	}
 
@@ -225,13 +225,13 @@
 		@apply block w-full appearance-none border-2 border-transparent py-2 px-0 text-gray-dark focus:outline-none;
 	}
 	input[type='range'] {
-		@apply border-transparent focus:outline-none;
+		@apply border-transparent focus:outline-none accent-primary;
 	}
 	input.addRounding:not(.optionInput) {
 		@apply rounded-md;
 	}
 	input.optionInput {
-		@apply h-4 w-4 border border-transparent text-secondary focus:ring-secondary;
+		@apply h-4 w-4 border border-transparent text-secondary focus:ring-secondary accent-primary;
 	}
 	input.addRounding.optionInput {
 		@apply rounded;

@@ -13,7 +13,7 @@ export type InputCapture = boolean | 'user' | 'environment' | null;
 
 type CustomValidationRule = {
 	pattern: string;
-	showMessage: boolean;
+	messageIfMatch: boolean;
 	message: string;
 };
 export type CustomValidator = {
