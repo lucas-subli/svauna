@@ -23,3 +23,7 @@
   Cards
 </Button>
 
+<Button on:click={() => goto('demo/dropdowns')}>
+  Dropdowns
+</Button>
+

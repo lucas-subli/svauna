@@ -2,6 +2,7 @@ export { default as AppImage } from './AppImage.svelte';
 export { default as AsyncButton } from './AsyncButton.svelte';
 export { default as Button } from './Button.svelte';
 export { default as Card } from './Card.svelte';
+export { default as Dropdown } from './Dropdown.svelte';
 export { default as CheckboxGroup } from './forms/CheckboxGroup.svelte';
 export { default as Input } from './forms/Input.svelte';
 export { default as NumberInput } from './forms/NumberInput.svelte';
