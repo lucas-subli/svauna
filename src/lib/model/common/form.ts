@@ -46,3 +46,14 @@ export type InvalidHandlerResponse = {
 	errors: string[];
 	warnings: string[];
 };
+
+export type GroupOption = {
+	label?: string;
+	checked?: boolean | null;
+	indeterminate?: boolean | null; // (https://tinyurl.com/inputindeterminate)
+	readonly?: boolean | null;
+	disabled?: boolean | null;
+	required?: boolean;
+	value: string;
+	note?: string | null;
+};

@@ -1,5 +1,14 @@
 <script lang="ts">
-	import { Card, NumberInput, OptionInput, TextInput, TimeInput } from '$lib/components/common';
+	import {
+		Card,
+		CheckboxGroup,
+		NumberInput,
+		OptionInput,
+		PasswordInput,
+		RadioGroup,
+		TextInput,
+		TimeInput
+	} from '$lib/components/common';
 
 	let values = {
 		text_disabled: 'Disabled value.',
@@ -21,7 +30,9 @@
 		week: null,
 		time: null,
 		datetime_local: null,
-		// checkboxgroup: ['Three'],
+		checkboxgroup: [],
+		radiogroup: [],
+    password_special: null,
 		radio: false,
 		text: null,
 		text2: null,
@@ -59,6 +70,27 @@
 			}
 		]
 	};
+
+	const checkboxOptions = [
+		{
+			label: 'One',
+			checked: false,
+			indeterminate: null,
+			readonly: null,
+			disabled: null,
+			required: true,
+			value: 'one',
+			note: "I'm number one."
+		},
+		{ label: 'Two', value: 'two', note: 'I love number two.' },
+		{ label: 'Three', value: 'three' }
+	];
+
+	const radioOptions = [
+		{ label: 'Radio One', value: 'Radio One', note: 'Hi.' },
+		{ label: 'Radio Two', value: 'Radio Two', note: 'I like you.' },
+		{ label: 'Radio Three', value: 'Radio Three' }
+	];
 </script>
 
 <Card class="my-4">
@@ -101,6 +133,8 @@
 		patternMessage="Values don't match."
 		disabled={values.paired_source === null}
 	/>
+
+	<PasswordInput label="Password with Show/Hide" bind:value={values.password_special} />
 
 	<TextInput
 		label="Email"
@@ -176,4 +210,11 @@
 		note="Why is there only one of me?"
 	/>
 
+	<CheckboxGroup
+		options={checkboxOptions}
+		bind:group={values.checkboxgroup}
+		groupLabel="Checkbox Group"
+	/>
+
+	<RadioGroup options={radioOptions} bind:group={values.radiogroup} groupLabel="Radio Group" />
 </Card>

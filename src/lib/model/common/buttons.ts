@@ -1,1 +1,1 @@
-export type ButtonSize = 'standard' | 'fat' | 'featured' | 'inline';
+export type ButtonType = 'standard' | 'fat' | 'featured' | 'inline' | 'text';

@@ -100,29 +100,36 @@
   <div class="flex flex-col">
     <div>
       I am a standard button
-      <Button size="standard" class="m-2" on:click={() => {}}>
+      <Button level="standard" class="m-2" on:click={() => {}}>
         Standard
       </Button>
     </div>
 
     <div>
       I am a fat button
-      <Button color="secondary" size="fat" class="m-2" on:click={() => {}}>
+      <Button color="secondary" level="fat" class="m-2" on:click={() => {}}>
         Fat
       </Button>
     </div>
 
     <div>
       I am a Featured button
-      <Button color="info" size="featured" class="m-2" on:click={() => {}}>
+      <Button color="info" level="featured" class="m-2" on:click={() => {}}>
         Featured
       </Button>
     </div>
 
     <div>
       I am a inline button
-      <Button color="danger" size="inline" class="m-2" on:click={() => {}}>
+      <Button color="danger" level="inline" class="m-2" on:click={() => {}}>
         inline
+      </Button>
+    </div>
+
+    <div>
+      I am a text button
+      <Button color="warning" level="text" class="m-2" on:click={() => {}}>
+        text
       </Button>
     </div>
 
